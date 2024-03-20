@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../../pages/Home.vue';
 import Login from '../../pages/Login.vue';
 import Gallery from '../../pages/Gallery.vue';
+import Test from '../../pages/Test.vue';
 
 
 const routes = [
@@ -20,7 +21,13 @@ const routes = [
     path: '/gallery', 
     name: 'Gallery',
     component: Gallery
-  }
+  },
+  {
+    path: '/test', 
+    name: 'test',
+    component: Test,
+    meta: { hideNav: true }
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),

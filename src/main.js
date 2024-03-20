@@ -4,6 +4,7 @@ import router from './assets/router';
 import Home from './pages/Home.vue';
 import Login from './pages/Login.vue';
 import Gallery from './pages/Gallery.vue';
+import Test from './pages/Test.vue';
 
 import "@fontsource/inter"; 
 import "@fontsource/inter/100.css"; 
@@ -22,6 +23,7 @@ const routes = [
     { path: '/', component: Home },
     { path: '/', component: Login },
     { path: '/', component: Gallery },
+    { path: '/', component: Test },
   ];
 
 

@@ -6,8 +6,8 @@
     </a>
   </figure> 
   <div class="text-center">
-  <h1 class="mt-[20px] mb-[7px] font-semibold text-[20px]">Cebu Marathon 2024</h1>
-  <h1 class="font-normal text-[#6C4EAB] text-[14px]">March 2024</h1>
+  <h1 class="mt-[20px] mb-[7px] font-semibold text-[20px]">{{ name }}</h1>
+  <h1 class="font-normal text-[#6C4EAB] text-[14px]">{{ date }}</h1>
   </div>
 </div>
 </template>

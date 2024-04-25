@@ -1,26 +1,45 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../../pages/Home.vue';
 import Login from '../../pages/Login.vue';
-import Gallery from '../../pages/Gallery.vue';
 import Test from '../../pages/Test.vue';
+import AdminDashboard from '../../pages/AdminDashboard.vue';
+import UsersEvent from '../../pages/UsersEvent.vue';
+import UsersHome from '../../pages/UsersHome.vue';
+import Registration from '../../pages/Registration.vue';
+import AdminEventDetails from  '../../pages/AdminEventDetails.vue';
 
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/home', 
+    name: 'UsersHome',
+    component: UsersHome, 
   },
   {
-    path: '/login', 
-    name: 'Login',
-    component: Login, 
+    path: '/event', 
+    name: 'UsersEvent',
+    component: UsersEvent,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
     meta: { hideNav: true }
   },
   {
-    path: '/gallery', 
-    name: 'Gallery',
-    component: Gallery
+    path: '/registration',
+    name: 'registration',
+    component: Registration,
+    meta: { hideNav: true }
+  },
+  {
+    path: '/adminhome', 
+    name: 'AdminHome',
+    component: AdminDashboard,
+  },
+  {
+    path: '/adminevent', 
+    name: 'AdminEventDetails',
+    component: AdminEventDetails,
   },
   {
     path: '/test', 
@@ -35,3 +54,4 @@ const router = createRouter({
 });
 
 export default router;
+

@@ -1,10 +1,12 @@
-<template>
-  <div>
+  <template>
     <Navbar v-if="!$route.meta.hideNav" />
-    <router-view></router-view>
-  </div>
-</template>
+    <SideBar v-if="$route.meta.isAdmin"/>
+    <div>
+      <Transition name="slide-fade" mode="out-in"><router-view/></Transition>
+    </div>
+  </template>
 
-<script setup>
-import Navbar from './components/Navbar.vue';
-</script>
+  <script setup>
+  import Navbar from './components/Navbar.vue';
+  import SideBar from './components/SideBar.vue'
+  </script>

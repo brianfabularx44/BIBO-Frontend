@@ -69,7 +69,7 @@
                       </div>
 
                       <div class="text-center mt-10">
-                      <p class="mt-auto text-[15px]">Already Have an Account?<span class="ml-1 text-[#6C4EAB] hover:underline cursor-pointer">Login</span></p>
+                      <p class="mt-auto text-[15px]">Already Have an Account? <router-link to="/login" class="ml-1 text-[#6C4EAB] hover:underline cursor-pointer">Login</router-link></p>
                       </div>
 
                       

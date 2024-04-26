@@ -17,37 +17,38 @@
                     <p class="mb-5 font-bold text-[30px]">Login your Account</p>
                     <!--Username input-->
                     <div class="relative my-5">
-                        <md-outlined-text-field type="email" label="Email Address" class="items-center w-full"></md-outlined-text-field>
+                        <md-outlined-text-field type="email" label="Email Address" class="items-center w-full" required></md-outlined-text-field>
                     </div>
 
                     <!--Password input-->
                     <div class="relative my-5">
-                      <md-outlined-text-field label="Password" type="password" class="w-full">
+                      <md-outlined-text-field label="Password" type="password" class="w-full" required>
                       </md-outlined-text-field>
                     </div>
 
                     <!-- Remember Me checkbox -->
                     <div class="mb-4 flex items-center">
                       <md-checkbox touch-target="wrapper" class="p-0 ml-0 mr-1 my-0"></md-checkbox>
-                      <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900">Remember Me</label>
+                      <label class="ms-2 text-sm font-medium text-gray-900">Remember Me</label>
                     </div>
 
                     <div class="my-5">
                       <!--Submit button-->
                       <div class="mt-3">
-                        <md-filled-tonal-button class="w-full rounded-lg font-bold text-base">Login</md-filled-tonal-button>
+                        <md-filled-tonal-button type="submit" class="w-full rounded-lg font-bold text-base">Login</md-filled-tonal-button>
                       </div>
                     </div>
                     <div class="text-center mt-10">
-                    <p class="mt-auto text-[15px]">Don't have an account yet?<span class="ml-1 text-[#6C4EAB] hover:underline cursor-pointer">Signup</span></p>
+                      <p class="mt-auto text-[15px]">Don't Have an Account Yet? <router-link to="/registration" class="ml-1 text-[#6C4EAB] hover:underline cursor-pointer">Signup</router-link></p>
+
                     </div>
                   </form>
                 </div>
                 
                 <!--Forgot Password-->
-                <div class="text-center">
+                <!-- <div class="text-center">
                   <p class="mt-auto text-[15px] text-[#C0C0C0] underline cursor-pointer">Forgot Password?</p>
-                </div>
+                </div> -->
               </div>
               <!-- Picture ni Brian-->
               <img :src="login" class="hidden lg:flex items-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none object-cover w-full h-full">
@@ -60,9 +61,9 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import {toast} from 'vue3-toastify'
 import login from "../assets/images/login.jpg";
-import { Icon } from "@iconify/vue";
 import axios from 'axios';
 import { ref } from 'vue';
 
@@ -74,6 +75,8 @@ import "@material/web/checkbox/checkbox"
 const email = ref("")
 const password = ref("");
 
+const router = useRouter();
+
 
 const handleLogin = async () => {
   try {
@@ -83,7 +86,7 @@ const handleLogin = async () => {
     });
 
     if (response.data.success) { 
-      window.location.href = '/adminhome'; 
+      window.location.href = '/admin'; 
     } else {
       toast.error(response.data.message || 'Login failed. Please check your credentials and try again.');
     }
@@ -92,3 +95,7 @@ const handleLogin = async () => {
   }
 }
 </script>
+
+<style>
+  
+</style>

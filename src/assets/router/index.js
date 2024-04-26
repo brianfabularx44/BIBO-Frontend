@@ -1,23 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../../pages/Login.vue';
 import Test from '../../pages/Test.vue';
-import AdminDashboard from '../../pages/AdminDashboard.vue';
-import UsersEvent from '../../pages/UsersEvent.vue';
+import UsersEventGallery from '../../pages/UsersEventGallery.vue';
 import UsersHome from '../../pages/UsersHome.vue';
 import Registration from '../../pages/Registration.vue';
+import AdminDashboard from '../../pages/AdminDashboard.vue';
 import AdminEventDetails from  '../../pages/AdminEventDetails.vue';
+import AdminEventGallery from '../../pages/AdminEventGallery.vue';
 
+const isAdmin = () => { 
+  return true; 
+};
 
 const routes = [
   {
-    path: '/home', 
+    path: '/', 
     name: 'UsersHome',
     component: UsersHome, 
   },
   {
-    path: '/event', 
-    name: 'UsersEvent',
-    component: UsersEvent,
+    path: '/gallery', 
+    name: 'UsersEventGallery',
+    component: UsersEventGallery,
   },
   {
     path: '/login',
@@ -32,14 +36,22 @@ const routes = [
     meta: { hideNav: true }
   },
   {
-    path: '/adminhome', 
+    path: '/admin', 
     name: 'AdminHome',
-    component: AdminDashboard,
+    component: AdminDashboard, 
+    meta: { isAdmin: true, hideNav: true }
   },
   {
-    path: '/adminevent', 
+    path: '/adminevent',
     name: 'AdminEventDetails',
     component: AdminEventDetails,
+    meta: { isAdmin: true, hideNav: true } 
+  },
+  {
+    path: '/admingallery',
+    name: 'AdminEventGallery',
+    component: AdminEventGallery,
+    meta: { isAdmin: true, hideNav: true } 
   },
   {
     path: '/test', 
@@ -48,6 +60,8 @@ const routes = [
     meta: { hideNav: true }
   },
 ];
+
+
 const router = createRouter({
   history: createWebHistory(),
   routes

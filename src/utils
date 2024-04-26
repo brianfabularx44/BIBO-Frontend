@@ -1,0 +1,18 @@
+
+// Function to store data in local storage
+function setStore(key, value) {
+    localStorage.setItem(key, value);
+}
+
+// Function to retrieve data from local storage
+function getStore(key) {
+    return localStorage.getItem(key);
+}
+
+// Function to remove data from local storage
+function removeStore(key) {
+    localStorage.removeItem(key);
+}
+
+// Export the functions to make them accessible in other files
+export { setStore, getStore, removeStore };

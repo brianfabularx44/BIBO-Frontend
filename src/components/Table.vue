@@ -1,6 +1,7 @@
 <template>
+  <SideBar/>
     <section class="bg-gray-50 p-3 sm:p-5">
-      <div class="mx-auto px-4 lg:px-12">
+      <div class="mx-auto lg:px-15">
         <!-- Start coding here -->
         <div class="bg-white shadow-md sm:rounded-lg overflow-hidden">
           <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -23,7 +24,7 @@
                 <svg class="h-5 w-5 mr-1" fill="currentColor" viewbox="0 0 50 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                 </svg>
-                Add User
+                Add a Runner
               </button>
               <div class="flex items-center space-x-3 w-full md:w-auto">              
                 <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200" type="button">
@@ -45,6 +46,7 @@
                   <th scope="col" class="px-4 py-3">User ID</th>
                   <th scope="col" class="px-4 py-3">First Name</th>
                   <th scope="col" class="px-4 py-3">Last Name</th>
+                  <th scope="col" class="px-4 py-3">Category</th>
                   <th scope="col" class="px-4 py-3">BIB Number</th>
                   <th scope="col" class="px-4 py-3">
                     <span class="sr-only">Actions</span>
@@ -56,6 +58,7 @@
                   <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{{ user.id }}</th>
                   <td class="px-4 py-3">{{ user.firstName }}</td>
                   <td class="px-4 py-3">{{ user.lastName }}</td>
+                  <td class="px-4 py-3">{{ user.category }}</td>
                   <td class="px-4 py-3">{{ user.bibNumber }}</td>
                   <td class="px-4 py-3 flex items-center justify-end">
                     <button id="apple-imac-27-dropdown-button" data-dropdown-toggle="apple-imac-27-dropdown" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none " type="button">
@@ -112,9 +115,10 @@
   <script setup>
   import { ref } from 'vue';
   import RunnerModal from '../components/RunnerModal.vue';
+  import SideBar from './SideBar.vue';
   
   const users = ref([
-    { id: 1, firstName: 'Jewel', lastName: 'Gesim', bibNumber: '20237871' }
+    { id: 1, firstName: 'Jewel', lastName: 'Gesim', category: '5km', bibNumber: '20237871',}
   ]);
   
   const pagination = ref({

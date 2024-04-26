@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class="mr-[100px] ml-[150px]">
     <Table/>
-    
   </div>
 
   </template>

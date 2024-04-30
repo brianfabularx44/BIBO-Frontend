@@ -1,8 +1,10 @@
   <template>
-    <Navbar v-if="!$route.meta.hideNav" />
-    <SideBar v-if="$route.meta.isAdmin"/>
     <div>
-      <Transition name="slide-fade" mode="out-in"><router-view/></Transition>
+      <Navbar v-if="!$route.meta.hideNav" />
+       <SideBar v-if="$route.meta.isAdmin"/>
+      <Transition name="slide-fade" mode="out-in">
+        <router-view/>
+      </Transition>
     </div>
   </template>
 

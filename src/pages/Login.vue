@@ -17,13 +17,12 @@
                     <p class="mb-5 font-bold text-[30px]">Login your Account</p>
                     <!--Username input-->
                     <div class="relative my-5">
-                        <md-outlined-text-field type="email" label="Email Address" class="items-center w-full" required></md-outlined-text-field>
+                    <input v-model="username" type="text" placeholder="Email Address" class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
                     </div>
 
                     <!--Password input-->
                     <div class="relative my-5">
-                      <md-outlined-text-field label="Password" type="password" class="w-full" required>
-                      </md-outlined-text-field>
+                      <input v-model="password" type="text" placeholder="Password" class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
                     </div>
 
                     <!-- Remember Me checkbox -->
@@ -72,16 +71,17 @@ import "@material/web/iconbutton/icon-button"
 import "@material/web/button/filled-tonal-button";
 import "@material/web/checkbox/checkbox"
 
-const email = ref("")
+const username = ref("")
 const password = ref("");
 
 const router = useRouter();
 
 
 const handleLogin = async () => {
+  console.log(username);
   try {
-    const response = await axios.post('http://127.0.0.1:5000/auth/login', {
-      email: email.value,
+    const response = await axios.post('http://127.0.0.1:5000/admin/login', {
+      username: username.value,
       password: password.value
     });
 

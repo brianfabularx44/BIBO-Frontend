@@ -7,6 +7,7 @@ import Registration from '../../pages/Registration.vue';
 import AdminDashboard from '../../pages/AdminDashboard.vue';
 import AdminEventDetails from  '../../pages/AdminEventDetails.vue';
 import AdminEventGallery from '../../pages/AdminEventGallery.vue';
+import EventManagement from '../../pages/EventManagement.vue';
 
 const isAdmin = () => { 
   return true; 
@@ -57,6 +58,12 @@ const routes = [
     path: '/test', 
     name: 'test',
     component: Test,
+    meta: { hideNav: true }
+  },
+  {
+    path: '/eventmanagement', 
+    name: 'EventManagement',
+    component: EventManagement,
     meta: { hideNav: true }
   },
 ];
